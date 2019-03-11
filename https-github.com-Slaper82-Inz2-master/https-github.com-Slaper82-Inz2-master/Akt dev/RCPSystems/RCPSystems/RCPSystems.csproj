@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EB5ECF4-6BE0-4867-8FB8-99B000AA1C28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RCPSystems</RootNamespace>
+    <AssemblyName>RCPSystems</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\FrmHelpers.cs" />
+    <Compile Include="Class\Priviliges.cs" />
+    <Compile Include="Class\ProdDuty.cs" />
+    <Compile Include="Class\ProdElem.cs" />
+    <Compile Include="Class\ProdTypes.cs" />
+    <Compile Include="Class\Product.cs" />
+    <Compile Include="Class\ReportClass.cs" />
+    <Compile Include="Class\RepZad.cs" />
+    <Compile Include="Class\SumClass.cs" />
+    <Compile Include="DbClass\Calendar.cs" />
+    <Compile Include="DbClass\EFModel.cs" />
+    <Compile Include="DbClass\genLogin.cs" />
+    <Compile Include="DbClass\genOrgUnit.cs" />
+    <Compile Include="DbClass\genOrgUnitPriv.cs" />
+    <Compile Include="DbClass\genOrgUser.cs" />
+    <Compile Include="DbClass\genRole.cs" />
+    <Compile Include="DbClass\genUser.cs" />
+    <Compile Include="DbClass\genUserDet.cs" />
+    <Compile Include="Forms\Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DayDef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DayDef.Designer.cs">
+      <DependentUpon>DayDef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dict.Designer.cs">
+      <DependentUpon>Dict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDuty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDuty.Designer.cs">
+      <DependentUpon>FrmDuty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmElement.Designer.cs">
+      <DependentUpon>FrmElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmElements.Designer.cs">
+      <DependentUpon>FrmElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHarmo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHarmo.Designer.cs">
+      <DependentUpon>FrmHarmo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProdAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProdAdd.Designer.cs">
+      <DependentUpon>FrmProdAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Logon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Logon.Designer.cs">
+      <DependentUpon>Logon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewOrder.Designer.cs">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimeAttandance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeAttandance.Designer.cs">
+      <DependentUpon>TimeAttandance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transact.Designer.cs">
+      <DependentUpon>Transact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171328301_InitializeMigration.cs" />
+    <Compile Include="Migrations\201803171328301_InitializeMigration.Designer.cs">
+      <DependentUpon>201803171328301_InitializeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171338131_TaskProdUpdates.cs" />
+    <Compile Include="Migrations\201803171338131_TaskProdUpdates.Designer.cs">
+      <DependentUpon>201803171338131_TaskProdUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171339339_FirstDataSeed.cs" />
+    <Compile Include="Migrations\201803171339339_FirstDataSeed.Designer.cs">
+      <DependentUpon>201803171339339_FirstDataSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171356351_ClientsPopulate.cs" />
+    <Compile Include="Migrations\201803171356351_ClientsPopulate.Designer.cs">
+      <DependentUpon>201803171356351_ClientsPopulate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171913200_TriggerStrtStop.cs" />
+    <Compile Include="Migrations\201803171913200_TriggerStrtStop.Designer.cs">
+      <DependentUpon>201803171913200_TriggerStrtStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803212238343_TaskProdNullEnable.cs" />
+    <Compile Include="Migrations\201803212238343_TaskProdNullEnable.Designer.cs">
+      <DependentUpon>201803212238343_TaskProdNullEnable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803232058150_AddReportProcedure.cs" />
+    <Compile Include="Migrations\201803232058150_AddReportProcedure.Designer.cs">
+      <DependentUpon>201803232058150_AddReportProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803232101005_CalendarSeed.cs" />
+    <Compile Include="Migrations\201803232101005_CalendarSeed.Designer.cs">
+      <DependentUpon>201803232101005_CalendarSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803232109288_InsertUserTran.cs" />
+    <Compile Include="Migrations\201803232109288_InsertUserTran.Designer.cs">
+      <DependentUpon>201803232109288_InsertUserTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803232201548_AddReportSumProcedure.cs" />
+    <Compile Include="Migrations\201803232201548_AddReportSumProcedure.Designer.cs">
+      <DependentUpon>201803232201548_AddReportSumProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803232237029_TriggerBreak.cs" />
+    <Compile Include="Migrations\201803232237029_TriggerBreak.Designer.cs">
+      <DependentUpon>201803232237029_TriggerBreak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803232322377_TranBreakAdd.cs" />
+    <Compile Include="Migrations\201803232322377_TranBreakAdd.Designer.cs">
+      <DependentUpon>201803232322377_TranBreakAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804031818226_LastChange.cs" />
+    <Compile Include="Migrations\201804031818226_LastChange.Designer.cs">
+      <DependentUpon>201804031818226_LastChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804031914417_LastChange1.cs" />
+    <Compile Include="Migrations\201804031914417_LastChange1.Designer.cs">
+      <DependentUpon>201804031914417_LastChange1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DbClass\rcpDay.cs" />
+    <Compile Include="DbClass\rcpHarmo.cs" />
+    <Compile Include="DbClass\rcpHarmoDef.cs" />
+    <Compile Include="DbClass\rcpPairsBRK.cs" />
+    <Compile Include="DbClass\rcpPairsIO.cs" />
+    <Compile Include="DbClass\rcpPairsOnB.cs" />
+    <Compile Include="DbClass\rcpTransactionAll.cs" />
+    <Compile Include="DbClass\rcpTranType.cs" />
+    <Compile Include="DbClass\rcpUserHarmo.cs" />
+    <Compile Include="DbClass\rcpUserHarmoList.cs" />
+    <Compile Include="DbClass\sysdiagram.cs" />
+    <Compile Include="DbClass\zadClient.cs" />
+    <Compile Include="DbClass\zadDuty.cs" />
+    <Compile Include="DbClass\zadDutyType.cs" />
+    <Compile Include="DbClass\zadElement.cs" />
+    <Compile Include="DbClass\zadOrder.cs" />
+    <Compile Include="DbClass\zadOrderProduct.cs" />
+    <Compile Include="DbClass\zadProdElem.cs" />
+    <Compile Include="DbClass\zadProduct.cs" />
+    <Compile Include="DbClass\zadTaskList.cs" />
+    <Compile Include="DbClass\zadTaskProduction.cs" />
+    <Compile Include="DbClass\zadType.cs" />
+    <Compile Include="DbClass\zadUserDuty.cs" />
+    <EmbeddedResource Include="Forms\Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DayDef.resx">
+      <DependentUpon>DayDef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dict.resx">
+      <DependentUpon>Dict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDuty.resx">
+      <DependentUpon>FrmDuty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmElement.resx">
+      <DependentUpon>FrmElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmElements.resx">
+      <DependentUpon>FrmElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHarmo.resx">
+      <DependentUpon>FrmHarmo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProdAdd.resx">
+      <DependentUpon>FrmProdAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Logon.resx">
+      <DependentUpon>Logon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewOrder.resx">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeAttandance.resx">
+      <DependentUpon>TimeAttandance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transact.resx">
+      <DependentUpon>Transact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171328301_InitializeMigration.resx">
+      <DependentUpon>201803171328301_InitializeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171338131_TaskProdUpdates.resx">
+      <DependentUpon>201803171338131_TaskProdUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171339339_FirstDataSeed.resx">
+      <DependentUpon>201803171339339_FirstDataSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171356351_ClientsPopulate.resx">
+      <DependentUpon>201803171356351_ClientsPopulate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171913200_TriggerStrtStop.resx">
+      <DependentUpon>201803171913200_TriggerStrtStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803212238343_TaskProdNullEnable.resx">
+      <DependentUpon>201803212238343_TaskProdNullEnable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803232058150_AddReportProcedure.resx">
+      <DependentUpon>201803232058150_AddReportProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803232101005_CalendarSeed.resx">
+      <DependentUpon>201803232101005_CalendarSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803232109288_InsertUserTran.resx">
+      <DependentUpon>201803232109288_InsertUserTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803232201548_AddReportSumProcedure.resx">
+      <DependentUpon>201803232201548_AddReportSumProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803232237029_TriggerBreak.resx">
+      <DependentUpon>201803232237029_TriggerBreak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803232322377_TranBreakAdd.resx">
+      <DependentUpon>201803232322377_TranBreakAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031818226_LastChange.resx">
+      <DependentUpon>201804031818226_LastChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031914417_LastChange1.resx">
+      <DependentUpon>201804031914417_LastChange1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address_Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calender1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stationery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

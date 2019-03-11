@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F413D2F-CE68-4BD6-8D9E-92E21DC0C96F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCPSystem</RootNamespace>
+    <AssemblyName>RCPSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\FrmHelpers.cs" />
+    <Compile Include="Class\ProdDuty.cs" />
+    <Compile Include="Class\ProdElem.cs" />
+    <Compile Include="Class\ProdTypes.cs" />
+    <Compile Include="Class\Product.cs" />
+    <Compile Include="DbClass\Calendar.cs" />
+    <Compile Include="Class\Priviliges.cs" />
+    <Compile Include="DbClass\EFModel.cs" />
+    <Compile Include="DbClass\rcpTransactionAll.cs" />
+    <Compile Include="DbClass\rcpUserHarmoList.cs" />
+    <Compile Include="DbClass\zadClient.cs" />
+    <Compile Include="DbClass\zadDuty.cs" />
+    <Compile Include="DbClass\zadDutyType.cs" />
+    <Compile Include="DbClass\zadProdElem.cs" />
+    <Compile Include="DbClass\zadUserDuty.cs" />
+    <Compile Include="Forms\Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DayDef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DayDef.Designer.cs">
+      <DependentUpon>DayDef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dict.Designer.cs">
+      <DependentUpon>Dict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDuty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDuty.Designer.cs">
+      <DependentUpon>FrmDuty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmElement.Designer.cs">
+      <DependentUpon>FrmElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmElements.Designer.cs">
+      <DependentUpon>FrmElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHarmo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHarmo.Designer.cs">
+      <DependentUpon>FrmHarmo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProdAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProdAdd.Designer.cs">
+      <DependentUpon>FrmProdAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Logon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Logon.Designer.cs">
+      <DependentUpon>Logon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewOrder.Designer.cs">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transact.Designer.cs">
+      <DependentUpon>Transact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbClass\genLogin.cs" />
+    <Compile Include="DbClass\genOrgUnit.cs" />
+    <Compile Include="DbClass\genOrgUnitPriv.cs" />
+    <Compile Include="DbClass\genOrgUser.cs" />
+    <Compile Include="DbClass\genRole.cs" />
+    <Compile Include="DbClass\genUser.cs" />
+    <Compile Include="DbClass\genUserDet.cs" />
+    <Compile Include="Migrations\201802151908129_Priviliges.cs" />
+    <Compile Include="Migrations\201802151908129_Priviliges.Designer.cs">
+      <DependentUpon>201802151908129_Priviliges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802151921361_PriviligesAdd.cs" />
+    <Compile Include="Migrations\201802151921361_PriviligesAdd.Designer.cs">
+      <DependentUpon>201802151921361_PriviligesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802151932404_TestUsersAdd.cs" />
+    <Compile Include="Migrations\201802151932404_TestUsersAdd.Designer.cs">
+      <DependentUpon>201802151932404_TestUsersAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802151940061_StructureAndLogins.cs" />
+    <Compile Include="Migrations\201802151940061_StructureAndLogins.Designer.cs">
+      <DependentUpon>201802151940061_StructureAndLogins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802152059172_UserToOrg.cs" />
+    <Compile Include="Migrations\201802152059172_UserToOrg.Designer.cs">
+      <DependentUpon>201802152059172_UserToOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802171139206_AddGender.cs" />
+    <Compile Include="Migrations\201802171139206_AddGender.Designer.cs">
+      <DependentUpon>201802171139206_AddGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802201823197_zadDuty.cs" />
+    <Compile Include="Migrations\201802201823197_zadDuty.Designer.cs">
+      <DependentUpon>201802201823197_zadDuty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802201902348_zadUserDuties.cs" />
+    <Compile Include="Migrations\201802201902348_zadUserDuties.Designer.cs">
+      <DependentUpon>201802201902348_zadUserDuties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802201926047_zadUserDuties_Update1.cs" />
+    <Compile Include="Migrations\201802201926047_zadUserDuties_Update1.Designer.cs">
+      <DependentUpon>201802201926047_zadUserDuties_Update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202123525_zadElementUpdate.cs" />
+    <Compile Include="Migrations\201802202123525_zadElementUpdate.Designer.cs">
+      <DependentUpon>201802202123525_zadElementUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231025145_rcpTranTypes.cs" />
+    <Compile Include="Migrations\201802231025145_rcpTranTypes.Designer.cs">
+      <DependentUpon>201802231025145_rcpTranTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231034544_TransactionIdentity.cs" />
+    <Compile Include="Migrations\201802231034544_TransactionIdentity.Designer.cs">
+      <DependentUpon>201802231034544_TransactionIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231429155_TransactAllAdd.cs" />
+    <Compile Include="Migrations\201802231429155_TransactAllAdd.Designer.cs">
+      <DependentUpon>201802231429155_TransactAllAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231434335_TransactionMod.cs" />
+    <Compile Include="Migrations\201802231434335_TransactionMod.Designer.cs">
+      <DependentUpon>201802231434335_TransactionMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231449175_zadTranTask.cs" />
+    <Compile Include="Migrations\201802231449175_zadTranTask.Designer.cs">
+      <DependentUpon>201802231449175_zadTranTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231452391_UserTableMod.cs" />
+    <Compile Include="Migrations\201802231452391_UserTableMod.Designer.cs">
+      <DependentUpon>201802231452391_UserTableMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802241302185_UserHarmoChange.cs" />
+    <Compile Include="Migrations\201802241302185_UserHarmoChange.Designer.cs">
+      <DependentUpon>201802241302185_UserHarmoChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802241311142_UserHarmoTableChange.cs" />
+    <Compile Include="Migrations\201802241311142_UserHarmoTableChange.Designer.cs">
+      <DependentUpon>201802241311142_UserHarmoTableChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802241314229_UserHarmoTableChangeNr2.cs" />
+    <Compile Include="Migrations\201802241314229_UserHarmoTableChangeNr2.Designer.cs">
+      <DependentUpon>201802241314229_UserHarmoTableChangeNr2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802261934562_PairsIOIdentity.cs" />
+    <Compile Include="Migrations\201802261934562_PairsIOIdentity.Designer.cs">
+      <DependentUpon>201802261934562_PairsIOIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802262029471_PairsRestLp.cs" />
+    <Compile Include="Migrations\201802262029471_PairsRestLp.Designer.cs">
+      <DependentUpon>201802262029471_PairsRestLp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803022030037_OrderRebuild.cs" />
+    <Compile Include="Migrations\201803022030037_OrderRebuild.Designer.cs">
+      <DependentUpon>201803022030037_OrderRebuild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803022046347_OrderFieldAdd.cs" />
+    <Compile Include="Migrations\201803022046347_OrderFieldAdd.Designer.cs">
+      <DependentUpon>201803022046347_OrderFieldAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803022105037_ClientAdd.cs" />
+    <Compile Include="Migrations\201803022105037_ClientAdd.Designer.cs">
+      <DependentUpon>201803022105037_ClientAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803031806462_PopulateClientList.cs" />
+    <Compile Include="Migrations\201803031806462_PopulateClientList.Designer.cs">
+      <DependentUpon>201803031806462_PopulateClientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803031837146_PairsTest.cs" />
+    <Compile Include="Migrations\201803031837146_PairsTest.Designer.cs">
+      <DependentUpon>201803031837146_PairsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803031843406_PairsRepairRest.cs" />
+    <Compile Include="Migrations\201803031843406_PairsRepairRest.Designer.cs">
+      <DependentUpon>201803031843406_PairsRepairRest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803040902164_KeyTest.cs" />
+    <Compile Include="Migrations\201803040902164_KeyTest.Designer.cs">
+      <DependentUpon>201803040902164_KeyTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803040905259_KeyOrderAddElse.cs" />
+    <Compile Include="Migrations\201803040905259_KeyOrderAddElse.Designer.cs">
+      <DependentUpon>201803040905259_KeyOrderAddElse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803041059070_Triggers.cs" />
+    <Compile Include="Migrations\201803041059070_Triggers.Designer.cs">
+      <DependentUpon>201803041059070_Triggers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803041837356_HarmoDefChenges.cs" />
+    <Compile Include="Migrations\201803041837356_HarmoDefChenges.Designer.cs">
+      <DependentUpon>201803041837356_HarmoDefChenges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803132218402_ElementSymbol.cs" />
+    <Compile Include="Migrations\201803132218402_ElementSymbol.Designer.cs">
+      <DependentUpon>201803132218402_ElementSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803170854322_zadProdTasksCleaning.cs" />
+    <Compile Include="Migrations\201803170854322_zadProdTasksCleaning.Designer.cs">
+      <DependentUpon>201803170854322_zadProdTasksCleaning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171213239_zadProdTasksConfig.cs" />
+    <Compile Include="Migrations\201803171213239_zadProdTasksConfig.Designer.cs">
+      <DependentUpon>201803171213239_zadProdTasksConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DbClass\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\TimeAttandance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeAttandance.Designer.cs">
+      <DependentUpon>TimeAttandance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbClass\rcpDay.cs" />
+    <Compile Include="DbClass\rcpHarmo.cs" />
+    <Compile Include="DbClass\rcpHarmoDef.cs" />
+    <Compile Include="DbClass\rcpPairsBRK.cs" />
+    <Compile Include="DbClass\rcpPairsIO.cs" />
+    <Compile Include="DbClass\rcpPairsOnB.cs" />
+    <Compile Include="DbClass\rcpTransaction.cs" />
+    <Compile Include="DbClass\rcpTranType.cs" />
+    <Compile Include="DbClass\rcpUserHarmo.cs" />
+    <Compile Include="DbClass\sysdiagram.cs" />
+    <Compile Include="DbClass\zadElement.cs" />
+    <Compile Include="DbClass\zadOrder.cs" />
+    <Compile Include="DbClass\zadOrderProduct.cs" />
+    <Compile Include="DbClass\zadProduct.cs" />
+    <Compile Include="DbClass\zadTaskList.cs" />
+    <Compile Include="DbClass\zadTaskProduction.cs" />
+    <Compile Include="DbClass\zadType.cs" />
+    <EmbeddedResource Include="Forms\Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DayDef.resx">
+      <DependentUpon>DayDef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dict.resx">
+      <DependentUpon>Dict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDuty.resx">
+      <DependentUpon>FrmDuty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmElement.resx">
+      <DependentUpon>FrmElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmElements.resx">
+      <DependentUpon>FrmElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHarmo.resx">
+      <DependentUpon>FrmHarmo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProdAdd.resx">
+      <DependentUpon>FrmProdAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Logon.resx">
+      <DependentUpon>Logon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewOrder.resx">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transact.resx">
+      <DependentUpon>Transact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802151908129_Priviliges.resx">
+      <DependentUpon>201802151908129_Priviliges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802151921361_PriviligesAdd.resx">
+      <DependentUpon>201802151921361_PriviligesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802151932404_TestUsersAdd.resx">
+      <DependentUpon>201802151932404_TestUsersAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802151940061_StructureAndLogins.resx">
+      <DependentUpon>201802151940061_StructureAndLogins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802152059172_UserToOrg.resx">
+      <DependentUpon>201802152059172_UserToOrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802171139206_AddGender.resx">
+      <DependentUpon>201802171139206_AddGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802201823197_zadDuty.resx">
+      <DependentUpon>201802201823197_zadDuty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802201902348_zadUserDuties.resx">
+      <DependentUpon>201802201902348_zadUserDuties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802201926047_zadUserDuties_Update1.resx">
+      <DependentUpon>201802201926047_zadUserDuties_Update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202123525_zadElementUpdate.resx">
+      <DependentUpon>201802202123525_zadElementUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231025145_rcpTranTypes.resx">
+      <DependentUpon>201802231025145_rcpTranTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231034544_TransactionIdentity.resx">
+      <DependentUpon>201802231034544_TransactionIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231429155_TransactAllAdd.resx">
+      <DependentUpon>201802231429155_TransactAllAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231434335_TransactionMod.resx">
+      <DependentUpon>201802231434335_TransactionMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231449175_zadTranTask.resx">
+      <DependentUpon>201802231449175_zadTranTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231452391_UserTableMod.resx">
+      <DependentUpon>201802231452391_UserTableMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802241302185_UserHarmoChange.resx">
+      <DependentUpon>201802241302185_UserHarmoChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802241311142_UserHarmoTableChange.resx">
+      <DependentUpon>201802241311142_UserHarmoTableChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802241314229_UserHarmoTableChangeNr2.resx">
+      <DependentUpon>201802241314229_UserHarmoTableChangeNr2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802261934562_PairsIOIdentity.resx">
+      <DependentUpon>201802261934562_PairsIOIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802262029471_PairsRestLp.resx">
+      <DependentUpon>201802262029471_PairsRestLp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803022030037_OrderRebuild.resx">
+      <DependentUpon>201803022030037_OrderRebuild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803022046347_OrderFieldAdd.resx">
+      <DependentUpon>201803022046347_OrderFieldAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803022105037_ClientAdd.resx">
+      <DependentUpon>201803022105037_ClientAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803031806462_PopulateClientList.resx">
+      <DependentUpon>201803031806462_PopulateClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803031837146_PairsTest.resx">
+      <DependentUpon>201803031837146_PairsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803031843406_PairsRepairRest.resx">
+      <DependentUpon>201803031843406_PairsRepairRest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803040902164_KeyTest.resx">
+      <DependentUpon>201803040902164_KeyTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803040905259_KeyOrderAddElse.resx">
+      <DependentUpon>201803040905259_KeyOrderAddElse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803041059070_Triggers.resx">
+      <DependentUpon>201803041059070_Triggers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803041837356_HarmoDefChenges.resx">
+      <DependentUpon>201803041837356_HarmoDefChenges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132218402_ElementSymbol.resx">
+      <DependentUpon>201803132218402_ElementSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803170854322_zadProdTasksCleaning.resx">
+      <DependentUpon>201803170854322_zadProdTasksCleaning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171213239_zadProdTasksConfig.resx">
+      <DependentUpon>201803171213239_zadProdTasksConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\TimeAttandance.resx">
+      <DependentUpon>TimeAttandance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+    <None Include="Resources\User2.png" />
+    <None Include="Resources\Tools1.png" />
+    <None Include="Resources\Address_Book.png" />
+    <Content Include="Resources\Calender.png" />
+    <None Include="Resources\Paste.png" />
+    <None Include="Resources\Calender1.png" />
+    <Content Include="Resources\Clock.png" />
+    <None Include="Resources\Clock1.png" />
+    <None Include="Resources\Floppy.png" />
+    <None Include="Resources\Floppy1.png" />
+    <None Include="Resources\Floppy2.png" />
+    <None Include="Resources\Close.png" />
+    <Content Include="Resources\Home.png" />
+    <None Include="Resources\Stationery.png" />
+    <Content Include="Resources\System.png" />
+    <Content Include="Resources\Tools.png" />
+    <Content Include="Resources\User.png" />
+    <None Include="Resources\User1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
