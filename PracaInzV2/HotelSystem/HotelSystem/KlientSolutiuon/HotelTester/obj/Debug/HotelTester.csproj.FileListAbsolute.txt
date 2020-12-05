@@ -1,0 +1,6 @@
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\HotelTester\bin\Debug\HotelTester.exe.config
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\HotelTester\bin\Debug\HotelTester.exe
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\HotelTester\bin\Debug\HotelTester.pdb
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\HotelTester\obj\Debug\HotelTester.csproj.CoreCompileInputs.cache
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\HotelTester\obj\Debug\HotelTester.exe
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\HotelTester\obj\Debug\HotelTester.pdb

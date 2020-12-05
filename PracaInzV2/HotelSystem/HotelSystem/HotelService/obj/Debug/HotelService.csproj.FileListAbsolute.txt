@@ -1,0 +1,7 @@
+c:\users\waldek\source\repos\HotelSystem\HotelService\bin\Debug\HotelService.dll.config
+c:\users\waldek\source\repos\HotelSystem\HotelService\bin\Debug\HotelService.dll
+c:\users\waldek\source\repos\HotelSystem\HotelService\bin\Debug\HotelService.pdb
+c:\users\waldek\source\repos\HotelSystem\HotelService\obj\Debug\HotelService.csprojResolveAssemblyReference.cache
+c:\users\waldek\source\repos\HotelSystem\HotelService\obj\Debug\HotelService.csproj.CoreCompileInputs.cache
+c:\users\waldek\source\repos\HotelSystem\HotelService\obj\Debug\HotelService.dll
+c:\users\waldek\source\repos\HotelSystem\HotelService\obj\Debug\HotelService.pdb

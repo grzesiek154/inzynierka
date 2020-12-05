@@ -1,0 +1,10 @@
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\bin\Debug\WWSIVago.exe.config
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\bin\Debug\WWSIVago.exe
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\bin\Debug\WWSIVago.pdb
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.csprojResolveAssemblyReference.cache
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.Form1.resources
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.Properties.Resources.resources
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.csproj.GenerateResource.Cache
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.csproj.CoreCompileInputs.cache
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.exe
+C:\Users\Waldek\source\repos\HotelSystem\KlientSolutiuon\WWSIVago\obj\Debug\WWSIVago.pdb

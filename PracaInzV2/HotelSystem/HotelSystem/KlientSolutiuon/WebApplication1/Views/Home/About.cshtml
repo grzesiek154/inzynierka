@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApplication1.Serwer.Pokoj>
+@{
+    ViewBag.Title = "Wolne Pokoje";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<table>
+
+    @foreach (WebApplication1.Serwer.Pokoj h in Model)
+    {
+        <tr><td>@h.LiczbaOsob</td><td>@h.Opis</td></tr>
+    }
+</table>
+
+<p>Use this area to provide additional information.</p>
